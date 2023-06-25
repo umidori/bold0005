@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/league.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown=""
+				data-separator="^\n---$"
+				data-separator-vertical="^\n>>>$">
+				<script type="text/template">
+### 関数型プログラミング詳説
+
+（株）ボールド 技術部 鳥海秀一
+
+---
+### 講師紹介
+- - -
+* 名前：鳥海秀一
+* 出身：北海道
+* ボールド入社：2020年5月
+* 趣味：プログラミング
+<aside class="notes">
+  発表者が見るノート   
+  伝えたいことをメモ  
+</aside>
+
+---
+### 関数型言語とは
+- - -
+* 関数型プログラミング言語は、関数の合成によりプログラムを作成することを指向した言語である
+* 関数型言語はリストとリスト関数の２つの要素で構成される
+
+---
+### リスト
+- - -
+* 数値や文字列などの基本データのことをアトムという
+* アトムとリストを要素として並べたものをリストという
+* 要素の評価の仕方により即時評価リストと遅延評価リストに分かれる
+
+---
+### 即値評価と遅延評価
+- - --
+* 即時評価リストはリストの要素を直ちに評価するリスト
+* 遅延リストは必要とされるまで要素の評価を先延ばしするリスト
+* 遅延評価リストによりメモリの使用量を抑えることができる
+* 遅延評価リストにより無限リストを扱うことが可能となる
+
+---
+### リスト関数
+- - -
+* リスト関数はリスト生成関数とリスト操作関数に分かれる
+* 生成関数は特定のルールでリストを生成する
+* リスト操作関数のほとんどは新たなリストを生成する（閉包性を有する）
+
+---
+### リスト生成関数
+- - -
+1. Range
+	* 指定された範囲の連番が要素のリストを返す
+1. ReadLines
+	* 指定されたテキストファイルの各行を要素としたリストを返す
+
+---
+### リスト操作関数
+- - -
+1. Map
+	* 個々の要素を評価した結果のリストを返す
+1. FlatMap
+	* 入れ子になったリストの深さを1つ下げるMap
+1. Filter
+	* 評価した結果が真になる要素のリストを返す
+1. Group
+	* 評価した結果が同じになる要素で作成したリストのリストを返す
+
+---
+### 関数型プログラミングの実例
+- - -
+1. 頻出単語表示
+	* [解答例](https://github.com/umidori/bold0004/blob/main/program/WordCount/Func)
+1. 素数列挙
+	* [解答例](https://github.com/umidori/bold0004/blob/main/program/Primes)
+
+---
+### 練習問題
+- - -
+1. a,b,cは1〜9までのそれぞれ異なる数字である。abcを百の位がa、十の位がb、一の位がcの数値とした場合、abc+abc+abc == cccとなる数値abcを求めよ
+
+1. a,b,c,dは1〜9までのそれぞれ異なる数字である。abcdを千の位がa、百の位がb、十の位がc、一の位がdの数値とした場合、abcd*4 == dcbaとなる数値abcdを求めよ
+
+---
+### まとめ
+- - -
+1. 関数型プログラミングは手続き型とかなり異なる考え方を必要とする
+1. 関数型プログラミングができるようになるためには修練が必要となる
+1. そのためのプログラミング言語としては、Ruby、Kotlin、C#などの言語がおすすめできる
+1. 一方、Javaは関数型とは関係がないものを考慮する必要があるため、練習用の言語としてはおすすめできない
+
+				</script>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
